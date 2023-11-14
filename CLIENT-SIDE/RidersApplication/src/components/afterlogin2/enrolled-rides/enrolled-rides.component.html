@@ -1,0 +1,50 @@
+<div class="container">
+  <h1 class="font-weight-bold text-center" id="heading">List of enrolled rides</h1>
+  <h2 id="message" class="text-danger">{{message}}</h2>
+  <div>
+    <table class="table table-striped">
+      <thead *ngIf='checklistempty()'>
+        <tr class="table-primary">
+          <th scope="col">Ride Name</th>
+          <th scope="col">Ride Description</th>
+          <th scope="col">From (Source)</th>
+          <th scope="col">To (Destination)</th>
+          <th scope="col">Start Date</th>
+          <th scope="col">End Date</th>
+          <th scope="col">Cancel ride</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ride of EnrolledRidesList" class="table-warning">
+          <td>{{ride.title}}</td>
+          <td>{{ride.description}}</td>
+          <td>{{ride.source}}</td>
+          <td>{{ride.destination}}</td>
+          <td>{{ride.startdate}}</td>
+          <td>{{ride.enddate}}</td>
+          <td><button class="btn btn-danger" (click)="cancelRide(ride.id)" data-toggle="modal" data-target="#exampleModal" >Cancel</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLabel">Ride Cancellation!</h2>
+        </div>
+        <div class="modal-body">
+         You have cancelled the ride!!
+        </div>
+        <div class="modal-footer">
+          <button  type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>

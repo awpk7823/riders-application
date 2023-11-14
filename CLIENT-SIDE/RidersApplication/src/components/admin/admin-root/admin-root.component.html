@@ -1,0 +1,33 @@
+<div class="row align-items-center">
+  <div class="col-sm-8" id="head">
+      <h1 id="heading" class="display-2">RidersHub Application</h1>
+      <p id="name">Welcome Admin</p>
+  </div>
+  <div class="col-sm-4 text-right" id="head">
+      <button type="button" class="btn btn-outline-danger"  [routerLink]="['/','home']">Sign out</button>&nbsp;&nbsp;&nbsp;
+      <img id="logo" src="./assets/logo.jpeg" width=27% />
+  </div>
+</div>
+
+<div class="container">
+ 
+  <div class="row" id = "color">
+    <div class="col-sm " id="center">
+      <img id="imgbt" src="./assets/ViewRides.JPG" class="img-fluid rounded-pill" type="button" [routerLink]="['/admin/adminroot/viewrides']" >
+    </div>
+    <div class="col-sm" id="center">
+      <img id="imgbt" src="./assets/ViewRiders4.JPG" class="img-fluid rounded-pill" type="button" [routerLink]="['/admin/adminroot/viewriders']">
+    </div>
+    <div class="col-sm" id="center">
+      <img id="imgbt" src="./assets/rider3.jpg" class="img-fluid rounded-pill" type="button" [routerLink]="['/admin/adminroot/createItem']">
+    </div>
+    <div class="col-sm" id="center">
+      <img id="imgbt" src="./assets/viewItems.jpg" class="img-fluid rounded-pill" type="button" [routerLink]="['/admin/adminroot/viewItems']">
+    </div>
+  </div>
+
+  <div class="row">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
